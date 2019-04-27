@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26430.6
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FormStorageV8", "FormStorageV8\FormStorageV8.csproj", "{F594E6AD-E5CF-49D7-B3F0-9B7C72D0B7DC}"
+	ProjectSection(ProjectDependencies) = postProject
+		{165ED8E7-EDD9-4D64-BC00-1ACF7BEF049B} = {165ED8E7-EDD9-4D64-BC00-1ACF7BEF049B}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UmbracoTestbedV8", "..\UmbracoTestbedV8\UmbracoTestbedV8\UmbracoTestbedV8.csproj", "{165ED8E7-EDD9-4D64-BC00-1ACF7BEF049B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F594E6AD-E5CF-49D7-B3F0-9B7C72D0B7DC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F594E6AD-E5CF-49D7-B3F0-9B7C72D0B7DC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F594E6AD-E5CF-49D7-B3F0-9B7C72D0B7DC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F594E6AD-E5CF-49D7-B3F0-9B7C72D0B7DC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{165ED8E7-EDD9-4D64-BC00-1ACF7BEF049B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{165ED8E7-EDD9-4D64-BC00-1ACF7BEF049B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{165ED8E7-EDD9-4D64-BC00-1ACF7BEF049B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{165ED8E7-EDD9-4D64-BC00-1ACF7BEF049B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6388DB5C-BD56-4703-8D84-9719E59118F6}
+	EndGlobalSection
+EndGlobal

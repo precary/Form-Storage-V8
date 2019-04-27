@@ -1,0 +1,201 @@
+Form Storage is a simple way to take user submitted data and store into your database.  This is perfect for both MVC Surface Controller forms or even WebForms.
+
+This package comes with a datatype that you can place on any document to search the data.
+
+Installation:
+
+On install, this package will add three tables to your database.  You will need to remove these tables manually on uninstall (this prevents unintended data destruction).
+
+You will need to add a few AppSettings keys to your web config.
+
+Use one key to setup each form with it's fields like so:
+
+<add key="FormStorage:ContactUs" value="name,address,email,phone,company,comments"/>
+
+This adds the 'ContactUs' form with the fields name, address, etc.  You may house as many forms as you wish.
+
+Next (optional), provide more human friendly names for your fields like so:
+
+    <add key="FormStorage:Translation:name" value="Name"/>
+    <add key="FormStorage:Translation:email" value="Email Address"/>
+    <add key="FormStorage:Translation:phone" value="Phone"/>
+    <add key="FormStorage:Translation:address" value="Address"/>
+    <add key="FormStorage:Translation:comments" value="Comments"/>
+    <add key="FormStorage:Translation:company" value="Company"/>
+
+I recommend you create very simple field names that resemble the data closely.  The more human friendly names can change without any consequences to the data.
+
+Wire up your form:
+
+In either your MVC Surface Controller or your WebForm postback, add something like this to save submissions:
+
+using FormStorage;
+
+FormSchema formSchema = new FormSchema("ContactUs");
+formSchema.CreateSubmission(new Dictionary<string, string> {
+                { "name", m.Name },
+                { "email", m.Email },
+                { "address", m.Address},
+                { "company", m.Company},
+                { "phone", m.Phone},
+                { "comments", m.Comments}
+ });
+
+Included as an additional download is an MVC Surface controller Contact Us form for help setting up MVC.
+
+Search the Results:
+
+Create a datatype instance using "Form Storage", set the prevalue to your form alias and then drop the datatype onto a doctype of your choosing.
+
+A sample datatype has been included with the install.
+
+Cheers!
+
+<!doctype html>
+<!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="en">
+<!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="alternate" type="application/rss+xml" title="Latest packages" href="//our.umbraco.org/rss/projects" />
+    <link rel="alternate" type="application/rss+xml" title="Package updates" href="//our.umbraco.org/rss/projectsupdate" />
+    <link rel="alternate" type="application/rss+xml" title="Active forum topics" href="//our.umbraco.org/rss/activetopics" />
+    <link rel="alternate" type="application/rss+xml" title="Community blogs" href="//pipes.yahoo.com/pipes/pipe.run?_id=8llM7pvk3RGFfPy4pgt1Yg&_render=rss" />
+
+    <link rel="search" type="application/opensearchdescription+xml" title="our.umbraco.org" href="/scripts/OpenSearch.xml">
+
+    <!-- Application name -->
+    <meta name="application-name" content="Our Umbraco" />
+    <meta name="apple-mobile-web-app-title" content="Our Umbraco">
+
+    <!-- Icons -->
+    <link rel="apple-touch-icon-precomposed" href="/assets/images/app-icons/icon-60.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/assets/images/app-icons/icon-72.png">
+    <link rel="apple-touch-icon-precomposed" sizes="76x76" href="/assets/images/app-icons/icon-76.png">
+    <link rel="icon" sizes="192x192" href="/assets/images/app-icons/touch-icon-192x192.png">
+
+    <meta name="msapplication-TileImage" content="/assets/images/app-icons/tile.png" />
+    <meta name="msapplication-config" content="/assets/images/app-icons/browserconfig.xml">
+
+    <link rel="icon" type="image/png" href="/assets/images/app-icons/favicon.png">
+
+    <title>
+
+
+        Community - our.umbraco.org
+    </title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!--[if lt IE 9]>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.7.1/modernizr.min.js"></script>
+    <![endif]-->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+
+    
+
+
+    <!--[Css:Name="StandardRenderer"]//-->
+    
+
+    <script>
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date(); a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+        ga('create', 'UA-120590-4', 'auto');
+        ga('send', 'pageview');
+    </script>
+</head>
+
+<body class="community-page">
+    
+<div class="quick-menu">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                    <a href="/member/login">Sign in</a>  <a href="/member/Signup">Register</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <div class="wrapper">
+        <header>
+            <div class="navigation">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-3">
+                            <a class="logo" href="/">Our Umbraco</a>
+                        </div>
+                        <div id="toggle" class="menu-toggle">
+                            <a href="#" class="toggle cross"><span></span></a>
+                        </div>
+                        <nav class="col-md-9">
+                            <ul>
+        <li>
+            <a href="/forum/">Forum</a>
+        </li>
+        <li>
+            <a href="/projects/">Projects</a>
+        </li>
+        <li>
+            <a href="/documentation/">Documentation</a>
+        </li>
+        <li>
+            <a href="/download/">Download</a>
+        </li>
+        <li>
+            <a href="/contribute/">Contribute</a>
+        </li>
+
+    <li>
+            <a href="/member/login?redirectUrl=%2fFileDownload">Sign in</a><strong> / </strong><a href="/member/Signup">Register</a>
+    </li>
+</ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+
+
+
+
+
+
+
+
+        <footer>
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12">
+                        Our.umbraco.org is the community mothership for Umbraco, the open source asp.net cms. With a friendly forum for all your questions, a comprehensive documentation and a ton of packages from the community.
+                            This site is running <data id="umbraco-version" value="7.5.11">Umbraco version 7.5.11</data>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+    </div>
+    <!--.wrapper-->
+
+    <!--[Javascript:Name="StandardRenderer"]//-->
+
+    <script type="text/javascript">
+        classOnScroll('header', 'sticky', 10);
+    </script>
+
+    
+</body>
+</html>
